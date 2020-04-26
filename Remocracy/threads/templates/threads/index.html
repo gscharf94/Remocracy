@@ -1,0 +1,19 @@
+{% extends 'threads/base.html' %}
+
+{% block content %}
+
+{% for thread in threadList %}
+
+<div class="thread">
+	<div class="arrows">
+		<a href="{% url 'voteUpThreadFromIndex' thread.id %}"><div class="upArrow"></div></a>
+		<a href="{% url 'voteDownThreadFromIndex' thread.id %}"><div class="downArrow"></div></a>
+	</div>
+	<h2>{{thread.votes}} <a href="{% url 'detailThread' thread.id %}">{{thread.title}}</a></h2>
+</div>
+
+{% endfor %}
+
+
+
+{% endblock %}

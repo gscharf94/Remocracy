@@ -1,0 +1,21 @@
+{% extends 'threads/base.html' %}
+
+{% block content %}
+
+<div class="detailThread">
+
+	<div class="arrows">
+		<a href="{% url 'voteUpThread' thread.id %}"><div class="upArrow"></div></a>
+		<a href="{% url 'voteDownThread' thread.id %}"><div class="downArrow"></div></a>
+	</div>
+	<h2> {{thread.votes}} votes - {{thread.title}}</h2>
+	<p>{{thread.text}}</p>
+	<p class="detailDate">{{thread.createDate}}</p>
+
+</div>
+
+
+
+
+
+{% endblock %}

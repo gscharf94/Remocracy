@@ -1,0 +1,89 @@
+body {
+	font-family:Arial,Helvetica,sans-serif;
+	background-color: black;
+}
+
+.header {
+	padding: 20px;
+	padding-top: 5px;
+	text-align: left;
+	background:#2F4F4F;
+	color:white;
+}
+
+.header h1 {
+	font-size:40px;
+	margin-bottom: 0px;
+}
+
+.navbar {
+	overflow: hidden;
+	background-color:#2F4F4F;
+	padding-left: 35%;
+
+}
+
+.navbar a {
+	color:white;
+	float:left;
+	display:block;
+	padding: 5px 50px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.navbar a:hover {
+	background-color:black;
+}
+
+.thread {
+	background-color: #2F4F4F;
+	height:60px;
+}
+
+.thread h2 a {
+
+	color:white;
+	text-decoration: none;
+
+}
+
+.thread h2 {
+		padding-top: 15px;
+	vertical-align: middle;
+	color:white;
+}
+
+.thread h2 a:hover {
+	color: red;
+}
+
+.arrows {
+	float:left;
+	padding-right: 10px;
+	padding-left:10px;
+}
+
+.upArrow {
+	background-image: url('upArrow.png');
+	height:25px;
+	width:25px;
+	display: inline-block;
+
+}
+
+.upArrow:hover {
+	background-image: url('upArrowGreen.png');
+}
+
+.downArrow {
+	background-image: url('downArrow.png');
+	height:25px;
+	width:25px;
+}
+
+.downArrow:hover {
+	background-image: url('downArrowRed.png');
+}

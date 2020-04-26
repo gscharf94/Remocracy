@@ -1,0 +1,24 @@
+{% load static %}
+<html lang='en'>
+<head>
+	<title>Remocracy - Home Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' type='text/css' href="{% static 'threads/styles.css' %}">
+</head>
+<body>
+	<div class="header">
+		<h1>Remocracy</h1>
+		<p>Inspired by Athenian Direct Democracy</p>
+	</div>
+	<div class="navbar">
+		<a href="{% url 'index' %}">Threads</a>
+		<a href="#">Vote</a>
+		<a href="#">Profile</a>
+	</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
