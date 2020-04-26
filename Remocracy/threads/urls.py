@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
 	path('',views.index, name='index'),
 	path('<int:threadID>/',views.detailThread,name='detailThread'),
-	path('<int:threadID>/voteup/',views.voteUpThreadFromIndex,name='voteUpThreadFromIndex'),
-	path('<int:threadID>/votedown/',views.voteDownThreadFromIndex,name='voteDownThreadFromIndex'),
+	path('votethr/<int:threadID>/<str:howMuch>/<str:fromWhere>',views.voteThread,name='voteThread'),
+	path('votecom/<int:threadID>/<int:commentID>/<str:howMuch>/',views.voteComment,name='voteComment')
 ]

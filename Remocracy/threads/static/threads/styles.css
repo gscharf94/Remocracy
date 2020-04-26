@@ -91,6 +91,26 @@ body {
 	background-image: url('downArrowRed.png');
 }
 
+.upArrowCom {
+	background-image: url('upArrow.png');
+	height:25px;
+	width:25px;
+}
+
+.upArrowCom:hover {
+	background-image: url('upArrowGreen.png');
+}
+
+.downArrowCom {
+	background-image: url('downArrow.png');
+	height:25px;
+	width:25px;
+}
+
+.downArrowCom:hover {
+	background-image: url('downArrowRed.png');
+}
+
 .detailThread p {
 	padding-left: 50px;
 
@@ -98,11 +118,11 @@ body {
 
 .detailThread {
 	background-color: #2F4F4F;
-	width:80vw;
 	padding-bottom: 3vh;
 	color:white;
 	display:block;
-	margin-left: 5vw;
+	margin-left: 6vw;
+	margin-right: 6vw;
 }
 
 
@@ -114,4 +134,31 @@ body {
 
 .detailThread h2 {
 	padding-top: 15px; 
+}
+
+.comment {
+	background-color: #2F4F4F;
+	color:white;
+	margin-right: 7vw;
+	margin-left: 7vw;
+	margin-top: 50px;
+	padding:15px;
+}
+
+.commentDate {
+	float:right;
+}
+
+.commentsContainer {
+	/*background-color: #2F4F4F;*/
+}
+
+.comArrowHolder {
+	float:left;
+	padding-right: 10px;
+}
+
+.comVote {
+	float:left;
+	padding-right: 10px;
 }

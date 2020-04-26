@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse
 
-from .models import Thread
+from .models import Thread, Comment
 
 # Create your views here.
 def index(request):
@@ -16,8 +16,10 @@ def index(request):
 
 def detailThread(request,threadID):
 	thread = Thread.objects.get(pk=threadID)
+	comments = thread.comment_set.all()
 	context = {
-		'thread':thread
+		'thread':thread,
+		'comments':comments
 	}
 	return render(request,'threads/detailThread.html',context)
 
@@ -32,3 +34,19 @@ def voteDownThreadFromIndex(request,threadID):
 	thread.votes += -1
 	thread.save()
 	return redirect('index')
+
+def voteThread(request,threadID,howMuch,fromWhere):
+	thread = Thread.objects.get(pk=threadID)
+	thread.votes += int(howMuch)
+	thread.save()
+	if fromWhere == 'detail':
+		return redirect('detailThread',threadID)
+	elif fromWhere == 'index':
+		return redirect('index')
+
+def voteComment(request,threadID,commentID,howMuch):
+	thread = Thread.objects.get(pk=threadID)
+	comment = Comment.objects.get(pk=commentID)
+	comment.votes += int(howMuch)
+	comment.save()
+	return redirect('detailThread',threadID)

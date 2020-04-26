@@ -5,12 +5,30 @@
 <div class="detailThread">
 
 	<div class="arrows">
-		<a href="{% url 'voteUpThread' thread.id %}"><div class="upArrow"></div></a>
-		<a href="{% url 'voteDownThread' thread.id %}"><div class="downArrow"></div></a>
+		<a href="{% url 'voteThread' thread.id 1 'detail' %}"><div class="upArrow"></div></a>
+		<a href="{% url 'voteThread' thread.id -1 'detail' %}"><div class="downArrow"></div></a>
 	</div>
 	<h2> {{thread.votes}} votes - {{thread.title}}</h2>
 	<p>{{thread.text}}</p>
 	<p class="detailDate">{{thread.createDate}}</p>
+
+</div>
+
+<div class='commentsContainer'>
+
+	{% for comment in comments %}
+
+	<div class='comment'>
+		<div class='comArrowHolder'>
+			<a href="{% url 'voteComment' thread.id comment.id 1 %}"><div class='upArrowCom'></div></a>
+			<a href="{% url 'voteComment' thread.id comment.id -1 %}"><div class='downArrowCom'></div></a>
+		</div>
+		<p class='comVote'><b>{{comment.votes}}</b></p>
+		<p>{{comment.text}}</p>
+		<p class='commentDate'>{{comment.createDate}}</p>
+	</div>
+
+	{% endfor %}
 
 </div>
 
