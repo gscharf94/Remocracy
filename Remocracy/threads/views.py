@@ -38,6 +38,8 @@ def voteDownThreadFromIndex(request,threadID):
 def voteThread(request,threadID,howMuch,fromWhere):
 	thread = Thread.objects.get(pk=threadID)
 	thread.votes += int(howMuch)
+	thread.siteUser.votes += int(howMuch)
+	thread.siteUser.save()
 	thread.save()
 	if fromWhere == 'detail':
 		return redirect('detailThread',threadID)
@@ -48,5 +50,16 @@ def voteComment(request,threadID,commentID,howMuch):
 	thread = Thread.objects.get(pk=threadID)
 	comment = Comment.objects.get(pk=commentID)
 	comment.votes += int(howMuch)
+	comment.siteUser.votes += int(howMuch)
+	comment.siteUser.save()
 	comment.save()
 	return redirect('detailThread',threadID)
+
+def userProfile(request):
+	currentUser = request.user
+	siteUser = currentUser.siteuser
+	context = {
+		'currentUser':currentUser,
+		'siteUser':siteUser,
+	}
+	return render(request,'threads/userProfile.html',context)

@@ -162,3 +162,11 @@ body {
 	float:left;
 	padding-right: 10px;
 }
+
+.profileContainer {
+	color:white;
+	text-align: center;
+	background-color: #2F4F4F;
+	margin:20px;
+	padding-bottom: 1px;
+}
