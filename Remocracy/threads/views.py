@@ -56,10 +56,22 @@ def voteComment(request,threadID,commentID,howMuch):
 	return redirect('detailThread',threadID)
 
 def userProfile(request):
-	currentUser = request.user
-	siteUser = currentUser.siteuser
+	try:
+		currentUser = request.user
+		siteUser = currentUser.siteuser
+		context = {
+			'currentUser':currentUser,
+			'siteUser':siteUser,
+		}
+		return render(request,'threads/userProfile.html',context)
+	except:
+		context = {
+
+		}
+		return render(request,'threads/noUserProfile.html',context)
+
+def submitThread(request):
 	context = {
-		'currentUser':currentUser,
-		'siteUser':siteUser,
+
 	}
-	return render(request,'threads/userProfile.html',context)
+	return render(request,'threads/submitThread.html',context)

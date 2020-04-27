@@ -170,3 +170,18 @@ body {
 	margin:20px;
 	padding-bottom: 1px;
 }
+
+.submitThread {
+	padding-left: 100px;
+}
+
+
+.submitThread h4 a {
+	color:white;
+	text-decoration: none;
+
+}
+
+.submitThread h4 a:hover {
+	color:red;
+}

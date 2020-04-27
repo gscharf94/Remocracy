@@ -1,0 +1,12 @@
+{% extends 'threads/base.html' %}
+
+
+{% block content %}
+
+<form action='submitThreadForm' method='post'>
+	<label for='threadTitle'>Title: </label>
+	<input id='threadTitle' type='text' name='threadTitle' value=''>
+	<input type='submit' value='Submit'>
+</form>
+
+{% endblock %}

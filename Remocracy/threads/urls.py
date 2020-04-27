@@ -12,4 +12,6 @@ urlpatterns = [
 	path('votecom/<int:threadID>/<int:commentID>/<str:howMuch>/',views.voteComment,name='voteComment'),
 	path('login/',auth_views.LoginView.as_view(template_name='threads/login.html'),name='login'),
 	path('login/profile',views.userProfile,name='userProfile'),
+	path('logout/',auth_views.LogoutView.as_view(template_name='threads/logout.html'),name='logout'),
+	path('submitThread/',views.submitThread,name='submitThread')
 ]
